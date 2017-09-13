@@ -4,12 +4,33 @@ var jspRender = require('../')
 
 var app = express()
 
-app.use(jspRender.middleware({
-	jspRoot: path.join(__dirname, 'jsp'),
-	dataRoot: path.join(__dirname, 'data')
-}))
-
 app.use(express.static(path.join(__dirname, 'static')))
+
+const jsp = new jspRender({
+	root: path.join(__dirname, 'jsp'),
+	tags: {
+		foo: {
+			bar() {
+				return "<h2>Baz</h2>";
+			}
+		}
+	},
+	globals: {
+		name: 'John Doe',
+		currentYear: new Date().getFullYear()
+	}
+});
+
+app.get('/', (req, res) => {
+	res.send(jsp.render('page/test.jsp', {
+		errorMessage: '',
+		form: {
+			action: '/form.do',
+			userName: 'john',
+			userEmail: 'john.doe@company.com',
+		}
+	}));
+})
 
 app.listen('8080')
 

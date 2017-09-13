@@ -3,12 +3,13 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ include file="/lib/head.jsp" %>
 <div id="container">
-	<s:if test="ok">
+	<bob:stuff></bob:stuff>
+	<c:if test="success == true">
 		<p class="tip-success">Action success!</p>
-	</s:if>
-	<s:else>
+	</c:if>
+	<c:if test="!success && errorMessage">
 		<p class="tip-fail">${errorMessage}</p>
-	</s:else>
+	</c:if>
 	<form action="${form.action}" method="post">
 		<p>
 			User Name:<br>
