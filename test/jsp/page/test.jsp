@@ -10,6 +10,22 @@
 	<c:if test="!success && errorMessage">
 		<p class="tip-fail">${errorMessage}</p>
 	</c:if>
+
+	<c:choose>
+		<c:when test="x == 1">
+			<p>Yadda</p>
+		</c:when>
+		<c:when test="x == 2">
+			<p>Blah blah</p>
+		</c:when>
+		<c:otherwise>
+			<p>Nothing</p>
+		</c:otherwise>
+	</c:choose>
+
+	<c:set value="blah!" var="thing" />
+	<h2>I say ${thing}</h2>
+
 	<form action="${form.action}" method="post">
 		<p>
 			User Name:<br>

@@ -1,10 +1,9 @@
-var path = require('path')
-var express = require('express')
-var jspRender = require('../')
+const path = require('path')
+const express = require('express')
+const jspRender = require('../')
 
-var app = express()
-
-app.use(express.static(path.join(__dirname, 'static')))
+let app = express();
+app.use(express.static(path.join(__dirname, 'static')));
 
 const jsp = new jspRender({
 	root: path.join(__dirname, 'jsp'),
@@ -24,14 +23,15 @@ const jsp = new jspRender({
 app.get('/', (req, res) => {
 	res.send(jsp.render('page/test.jsp', {
 		errorMessage: '',
+		x: 2,
 		form: {
 			action: '/form.do',
 			userName: 'john',
 			userEmail: 'john.doe@company.com',
 		}
 	}));
-})
+});
 
-app.listen('8080')
+app.listen('8080');
 
-console.log('started on 8080...')
+console.log('started on 8080...');
