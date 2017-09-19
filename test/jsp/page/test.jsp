@@ -23,8 +23,8 @@
 		</c:otherwise>
 	</c:choose>
 
-	<c:set value="blah!" var="thing" />
-	<h2>I say ${thing}</h2>
+	<c:set value="blah" var="thing" />
+	<h2>I say <em>${thing}</em></h2>
 
 	<form action="${form.action}" method="post">
 		<p>
