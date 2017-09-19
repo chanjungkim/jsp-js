@@ -23,6 +23,12 @@
 		</c:otherwise>
 	</c:choose>
 
+	<ul>
+		<c:forEach items="${sweets}" var="sweet">
+			<li>${sweet}</li>
+		</c:forEach>
+	</ul>
+
 	<c:set value="blah" var="thing" />
 	<h2>I say <em>${thing}</em></h2>
 

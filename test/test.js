@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
 	res.send(jsp.render('page/test.jsp', {
 		errorMessage: '',
 		x: 2,
+		sweets: [
+			'muffins',
+			'donuts',
+			'shortbreads'
+		],
 		form: {
 			action: '/form.do',
 			userName: 'john',
