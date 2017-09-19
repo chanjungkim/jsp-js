@@ -1,8 +1,23 @@
-# jsp-renderer
+JSP RENDERER
+============
 
-Render JSP to HTML, simply remove Java code block and other things not supported, but support some necessary things like ```<%@include%>```, ```<%=..%>```, ```${..}```, ```<c:if>```, etc.
+JSP renderer is a Java Server Pages rendering library for nodejs.
 
-## Usage
+To render JSP to HTML, simply remove Java code. Currently supported tags are:
+
+- `<%@include%>`
+- `<%=..%>`
+- `${..}`
+- `<c:if>`
+- `<c:else>`
+- `<c:choose>`
+- `<c:when>`
+- `<c:otherwise>`
+- `<c:forEach>`
+- `<c:set>`
+
+
+## Tests
 
 Run:
 
@@ -12,12 +27,38 @@ npm test
 
 Then open your browser to ```http://localhost:8080/page/test.jsp```.
 
-## API
+## Usage
 
-## middleware(options)
+Import he renderer like so:
 
-Return express middleware.
+```js
+const JSPRenderer = require('jsp-renderer');
 
-Options:
-- jspRoot {String} root directory of JSP files
-- dataRoot {String} root directory of mock data
+const jsp = new JSPRenderer(options);
+jsp.render('file', data);
+```
+
+### Constructor options
+
+The following options can be provided to the constructor:
+
+- `root`: the root path where templates are
+- `tags`: a library of custom tags
+- `globals`: globally available data
+
+### Custom tags
+
+Custom tags can be handled by providing them to the constructor options. These are
+anonymous functions that take the arguments:
+
+- `node` the tag node being evaluated
+- `index` the position of the node in the jsp template. Useful for debugging
+- `data` the current context data (as an object)
+- `renderer` the instanciated renderer
+
+A custom tag handler must return a **string**.
+
+## Usage with Express
+
+Please read the code of `test/tests.js` to have an idea of how to integrate this
+library with Express.
