@@ -4,10 +4,12 @@
     "node": true,
     "jasmine": true
   },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
   "globals": {},
   "rules": {
     "comma-dangle" : [2, "never"],
-    "no-cond-assign": [2],
     "no-console": [2],
     "no-constant-condition": [2],
     "no-control-regex": [2],
@@ -37,7 +39,7 @@
 
     "accessor-pairs": [0],
     "block-scoped-var": [2],
-    "complexity": [2, 5],
+    "complexity": [2, 10],
     "consistent-return": [2],
     "curly": [2],
     "default-case": [0],
@@ -70,11 +72,9 @@
     "no-new": [2],
     "no-octal-escape": [2],
     "no-octal": [2],
-    "no-param-reassign": [2],
     "no-process-env": [0],
     "no-proto": [2],
     "no-redeclare": [2],
-    "no-return-assign": [2],
     "no-script-url": [2],
     "no-self-compare": [2],
     "no-sequences": [2],
@@ -181,7 +181,6 @@
     "max-params": [0, 3],
     "max-statements": [0],
     "no-bitwise": [2],
-    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }]
   }
 }
 
