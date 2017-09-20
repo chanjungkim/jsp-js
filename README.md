@@ -1,7 +1,7 @@
-JSP RENDERER
-============
+JSP-JS
+======
 
-JSP renderer is a Java Server Pages rendering library for nodejs.
+JSP-JS is a Java Server Pages rendering library for nodejs.
 
 To render JSP to HTML, simply remove Java code. Currently supported tags are:
 
@@ -32,9 +32,9 @@ Then open your browser to ```http://localhost:8080/page/test.jsp```.
 Import he renderer like so:
 
 ```js
-const JSPRenderer = require('jsp-renderer');
+const JSPJs = require('jsp-js');
 
-const jsp = new JSPRenderer(options);
+const jsp = new JSPJs(options);
 jsp.render('file', data);
 ```
 

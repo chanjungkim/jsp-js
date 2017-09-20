@@ -1,25 +1,30 @@
 {
-  "name": "jsp-renderer",
+  "name": "jsp-js",
   "version": "0.1.5",
   "description": "render JSP to HTML",
   "main": "index.js",
   "scripts": {
     "test": "supervisor test/test.js"
   },
-  "author": "luobotang",
+  "author": "Guillaume Pasquet",
+  "contributors": [
+    {"name": "luobotang"}
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luobotang/jsp-renderer.git"
+    "url": "git+https://github.com/ThisPlace/jsp-js.git"
   },
   "keywords": [
+    "jsp-js",
     "jsp",
-    "renderer"
+    "renderer",
+    "template"
   ],
   "bugs": {
-    "url": "https://github.com/luobotang/jsp-renderer/issues"
+    "url": "https://github.com/ThisPlace/jsp-js/issues"
   },
-  "homepage": "https://github.com/luobotang/jsp-renderer#readme",
+  "homepage": "https://github.com/ThisPlace/jsp-js#readme",
   "devDependencies": {
     "express": "^4.14.0",
     "eslint": "^4.6.1",
