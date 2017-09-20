@@ -1,16 +1,42 @@
-var path = require('path')
-var express = require('express')
-var jspRender = require('../')
+const path = require('path')
+const express = require('express')
+const jspRender = require('../')
 
-var app = express()
+let app = express();
+app.use(express.static(path.join(__dirname, 'static')));
 
-app.use(jspRender.middleware({
-	jspRoot: path.join(__dirname, 'jsp'),
-	dataRoot: path.join(__dirname, 'data')
-}))
+const jsp = new jspRender({
+	root: path.join(__dirname, 'jsp'),
+	tags: {
+		foo: {
+			bar() {
+				return "<h2>Baz</h2>";
+			}
+		}
+	},
+	globals: {
+		name: 'John Doe',
+		currentYear: new Date().getFullYear()
+	}
+});
 
-app.use(express.static(path.join(__dirname, 'static')))
+app.get('/', (req, res) => {
+	res.send(jsp.render('page/test.jsp', {
+		errorMessage: '',
+		x: 2,
+		sweets: [
+			'muffins',
+			'donuts',
+			'shortbreads'
+		],
+		form: {
+			action: '/form.do',
+			userName: 'john',
+			userEmail: 'john.doe@company.com',
+		}
+	}));
+});
 
-app.listen('8080')
+app.listen('8080');
 
-console.log('started on 8080...')
+console.log('started on 8080...');
