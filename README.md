@@ -38,6 +38,13 @@ const jsp = new JSPJs(options);
 jsp.render('file', data);
 ```
 
+The renderer also provides a promise wrapper for easy integration in
+promise-based code:
+
+```js
+jsp.renderPromise('file', data).then((html) => console.log(html));
+```
+
 ### Constructor options
 
 The following options can be provided to the constructor:
