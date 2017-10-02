@@ -1,40 +1,44 @@
 const path = require('path')
 const express = require('express')
-const jspRender = require('../')
+const JspRender = require('../')
 
 let app = express();
 app.use(express.static(path.join(__dirname, 'static')));
 
-const jsp = new jspRender({
-	root: path.join(__dirname, 'jsp'),
-	tags: {
-		foo: {
-			bar() {
-				return "<h2>Baz</h2>";
-			}
-		}
-	},
-	globals: {
-		name: 'John Doe',
-		currentYear: new Date().getFullYear()
-	}
+const jsp = new JspRender({
+    root: path.join(__dirname, 'jsp'),
+    tags: {
+        foo: {
+            bar() {
+                return '<h2>Baz</h2>';
+            }
+        }
+    },
+    globals: {
+        name: 'John Doe',
+        currentYear: new Date().getFullYear()
+    }
 });
 
-app.get('/', (req, res) => {
-	res.send(jsp.render('page/test.jsp', {
-		errorMessage: '',
-		x: 2,
-		sweets: [
-			'muffins',
-			'donuts',
-			'shortbreads'
-		],
-		form: {
-			action: '/form.do',
-			userName: 'john',
-			userEmail: 'john.doe@company.com',
-		}
-	}));
+app.get('/test', (req, res) => {
+    res.send(jsp.render('page/test.jsp', {
+        errorMessage: '',
+        x: 2,
+        sweets: [
+            'muffins',
+            'donuts',
+            'shortbreads'
+        ],
+        form: {
+            action: '/form.do',
+            userName: 'john',
+            userEmail: 'john.doe@company.com'
+        }
+    }));
+});
+
+app.get('/test2', (req, res) => {
+    res.send(jsp.render('page/test2.jsp', {}));
 });
 
 app.listen('8080');
