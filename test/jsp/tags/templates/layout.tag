@@ -14,6 +14,13 @@
                 <li><a href="#">About</a></li>
             </ul>
         </nav>
+
         <jsp:doBody />
+
+        <footer>
+            <p>
+                Footer
+            </p>
+        </footer>
     </body>
 </html>
