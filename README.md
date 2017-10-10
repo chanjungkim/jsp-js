@@ -15,7 +15,10 @@ To render JSP to HTML, simply remove Java code. Currently supported tags are:
 - `<c:otherwise>`
 - `<c:forEach>`
 - `<c:set>`
-
+- `<jsp:body>`
+- `<jsp:doBody>`
+- `<jsp:attribute>`
+- `<jsp:invoke>`
 
 ## Tests
 
