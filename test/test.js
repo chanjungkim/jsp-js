@@ -38,7 +38,7 @@ app.get('/test', (req, res) => {
 });
 
 app.get('/test2', (req, res) => {
-    res.send(jsp.render('page/test2.jsp', {}));
+    res.send(jsp.render('page/test2.jsp', {pageTitle: 'Template inheritance'}));
 });
 
 app.listen('8080');

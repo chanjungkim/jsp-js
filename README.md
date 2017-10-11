@@ -6,6 +6,7 @@ JSP-JS is a Java Server Pages rendering library for nodejs.
 To render JSP to HTML, simply remove Java code. Currently supported tags are:
 
 - `<%@include%>`
+- `<%@taglib tagdir="[path]">`
 - `<%=..%>`
 - `${..}`
 - `<c:if>`
@@ -15,7 +16,10 @@ To render JSP to HTML, simply remove Java code. Currently supported tags are:
 - `<c:otherwise>`
 - `<c:forEach>`
 - `<c:set>`
-
+- `<jsp:body>`
+- `<jsp:doBody>`
+- `<jsp:attribute>`
+- `<jsp:invoke>`
 
 ## Tests
 
