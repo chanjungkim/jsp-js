@@ -46,4 +46,4 @@
 		</p>
 	</form>
 </div>
-<%@ include file="/lib/foot.jsp" %>
+<%@ include file="/layout/footer.jsp" %>
