@@ -1,12 +1,15 @@
-const path = require('path')
-const express = require('express')
-const JspRender = require('../')
+const path = require('path');
+const express = require('express');
+const JspRender = require('../');
 
 let app = express();
 app.use(express.static(path.join(__dirname, 'static')));
 
 const jsp = new JspRender({
-    root: path.join(__dirname, 'jsp'),
+    root: [
+        path.join(__dirname, 'jsp'),
+        path.join(__dirname, 'jsp2')
+    ],
     tags: {
         foo: {
             bar() {
