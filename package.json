@@ -1,6 +1,6 @@
 {
   "name": "jsp-js",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "render JSP to HTML",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,9 @@
   },
   "author": "Guillaume Pasquet",
   "contributors": [
-    {"name": "luobotang"}
+    {
+      "name": "luobotang"
+    }
   ],
   "license": "MIT",
   "repository": {
