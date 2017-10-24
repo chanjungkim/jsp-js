@@ -1,6 +1,6 @@
 {
   "name": "jsp-js",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "render JSP to HTML",
   "main": "index.js",
   "scripts": {
