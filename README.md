@@ -26,7 +26,7 @@ To render JSP to HTML, simply remove Java code. Currently supported tags are:
 Run:
 
 ```hash
-npm test
+npm run demo
 ```
 
 Then open your browser to ```http://localhost:8080/page/test.jsp```.

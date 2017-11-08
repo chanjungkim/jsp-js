@@ -4,7 +4,8 @@
   "description": "render JSP to HTML",
   "main": "index.js",
   "scripts": {
-    "test": "supervisor test/test.js"
+    "test": "mocha",
+    "demo": "supervisor demo/test.js"
   },
   "author": "Guillaume Pasquet",
   "contributors": [
@@ -28,8 +29,9 @@
   },
   "homepage": "https://github.com/ThisPlace/jsp-js#readme",
   "devDependencies": {
-    "express": "^4.14.0",
     "eslint": "^4.6.1",
+    "express": "^4.14.0",
+    "mocha": "^4.0.1",
     "supervisor": "^0.12.0"
   },
   "dependencies": {}
