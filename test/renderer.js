@@ -14,7 +14,7 @@ describe('Renderer', () => {
     });
 
     it('Prints data in the HTML', () => {
-        const html = 'Hello ${name} interpreter\\';
+        const html = 'Hello ${name} interpreter';
         let doc = renderText(html, {name: 'JSP'});
         assert.equal(doc, 'Hello JSP interpreter');
     });
