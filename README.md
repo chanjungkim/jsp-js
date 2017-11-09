@@ -1,4 +1,4 @@
-JSP-JS
+JSP-JS [![Build Status](https://travis-ci.org/ThisPlace/jsp-js.svg?branch=master)](https://travis-ci.org/ThisPlace/jsp-js)
 ======
 
 JSP-JS is a Java Server Pages rendering library for nodejs.
