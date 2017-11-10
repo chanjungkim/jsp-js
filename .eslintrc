@@ -123,7 +123,6 @@
     "consistent-this": [0, "self"],
     "eol-last": [2],
     "func-names": [0],
-    "func-style": [2,  "declaration"],
     "id-length": [0],
     "id-match": [0],
     "indent": [2, 4, {
