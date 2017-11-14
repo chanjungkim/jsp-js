@@ -34,5 +34,7 @@
     "mocha": "^4.0.1",
     "supervisor": "^0.12.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "winston": "^2.4.0"
+  }
 }

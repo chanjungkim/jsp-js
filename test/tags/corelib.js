@@ -55,7 +55,7 @@ describe('CoreLib', () => {
 
     it('Supports When conditionals', () => {
         const test = (data) => {
-            return lib().tagWhenHandler(
+            return lib().tagWhen(
                 {
                     type: 'tag',
                     token: {
@@ -79,5 +79,41 @@ describe('CoreLib', () => {
         };
         assert.equal(test({val: true}), 'foobar');
         assert.equal(test({val: false}), '');
+    });
+
+    it('Supports url tags for output', () => {
+        const test = (data) => {
+            return lib().tagUrl(
+                {
+                    type: 'tag',
+                    token: {
+                        name: 'c:url',
+                        type: 'tag',
+                        text: '<c:url value="/foo/bar" />'
+                    }
+                },
+                1,
+                data
+            );
+        };
+        assert.equal(test({val: true}), '/foo/bar');
+    });
+
+    it('Supports setting variables from url tags', () => {
+        const test = (data) => {
+            return lib().tagUrl(
+                {
+                    type: 'tag',
+                    token: {
+                        name: 'c:url',
+                        type: 'tag',
+                        text: '<c:url var="thing" value="/foo/bar" />'
+                    }
+                },
+                1,
+                data
+            );
+        };
+        assert.equal(test({val: true}), '/foo/bar');
     });
 });

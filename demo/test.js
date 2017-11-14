@@ -1,11 +1,11 @@
 const path = require('path');
 const express = require('express');
-const JspRender = require('../');
+const JSPJs = require('../').Renderer;
 
 let app = express();
 app.use(express.static(path.join(__dirname, 'static')));
 
-const jsp = new JspRender({
+const jsp = new JSPJs({
     root: [
         path.join(__dirname, 'jsp'),
         path.join(__dirname, 'jsp2')
