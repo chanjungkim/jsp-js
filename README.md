@@ -36,7 +36,7 @@ Then open your browser to ```http://localhost:8080/page/test.jsp```.
 Import he renderer like so:
 
 ```js
-const JSPJs = require('jsp-js');
+const JSPJs = require('jsp-js').Renderer;
 
 const jsp = new JSPJs(options);
 jsp.render('file', data);

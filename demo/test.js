@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const JspRender = require('../');
+const JspRender = require('../').Renderer;
 
 let app = express();
 app.use(express.static(path.join(__dirname, 'static')));
